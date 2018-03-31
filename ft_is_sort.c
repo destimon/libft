@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcherend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/21 14:07:56 by dcherend          #+#    #+#             */
-/*   Updated: 2018/03/31 16:45:45 by dcherend         ###   ########.fr       */
+/*   Created: 2018/03/31 20:40:10 by dcherend          #+#    #+#             */
+/*   Updated: 2018/03/31 20:41:11 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c,
-		size_t n)
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	const char		*s;
-	char			*d;
-	size_t			i;
+	int i;
 
 	i = 0;
-	s = (char*)src;
-	d = (char*)dst;
-	while (i < n)
+	while (i < length)
 	{
-		if ((unsigned char)*s == (unsigned char)c)
-		{
-			*d++ = *s++;
-			return ((void*)d);
-		}
-		*d++ = *s++;
+		if (f(tab[i], tab[i + 1]) < 0)
+			return (0);
 		i++;
 	}
-	return (NULL);
+	return (1);
 }

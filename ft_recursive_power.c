@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcherend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/21 14:07:56 by dcherend          #+#    #+#             */
-/*   Updated: 2018/03/31 16:45:45 by dcherend         ###   ########.fr       */
+/*   Created: 2018/03/31 13:44:41 by dcherend          #+#    #+#             */
+/*   Updated: 2018/03/31 13:45:27 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c,
-		size_t n)
+int		ft_recursive_power(int nb, int power)
 {
-	const char		*s;
-	char			*d;
-	size_t			i;
-
-	i = 0;
-	s = (char*)src;
-	d = (char*)dst;
-	while (i < n)
-	{
-		if ((unsigned char)*s == (unsigned char)c)
-		{
-			*d++ = *s++;
-			return ((void*)d);
-		}
-		*d++ = *s++;
-		i++;
-	}
-	return (NULL);
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	return (nb * ft_recursive_power(nb, power - 1));
 }

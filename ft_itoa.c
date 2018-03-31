@@ -6,7 +6,7 @@
 /*   By: dcherend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 15:29:56 by dcherend          #+#    #+#             */
-/*   Updated: 2018/03/30 18:00:19 by dcherend         ###   ########.fr       */
+/*   Updated: 2018/03/31 20:48:07 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static	void	ft_kostyl(int *n, int *min)
 	}
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*str;
 	int		len;

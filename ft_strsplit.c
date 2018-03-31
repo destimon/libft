@@ -6,7 +6,7 @@
 /*   By: dcherend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 13:56:45 by dcherend          #+#    #+#             */
-/*   Updated: 2018/03/30 19:37:59 by dcherend         ###   ########.fr       */
+/*   Updated: 2018/03/31 17:31:48 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static	int		ft_count_words(char const *str, char del)
 	int	i;
 
 	i = 0;
+	if (*str != del && *str != '\0')
+		i++;
 	while (*str)
 	{
 		if (*str == del && (*(str + 1) != del && *(str + 1) != '\0'))
@@ -26,45 +28,44 @@ static	int		ft_count_words(char const *str, char del)
 	return (i);
 }
 
-char	**ft_strsplit(char const *s, char c)
+static	int		ft_count_length(char const *str, char del)
 {
-	char 	**arr;
-	int		wlen;
-	int		count;
-	int 	iword;
-	int		i;
-	
+	int i;
+
+	i = 0;
+	while (*str != '\0' && *str != del)
+	{
+		i++;
+		str++;
+	}
+	return (i);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	int		iword;
+	char	**arr;
+	int		wamount;
+
+	iword = 0;
 	if (s)
 	{
-		i = 0;
-		iword = 0;
-		wlen = ft_count_words(s, c);
-		arr = (char**)malloc(sizeof(*arr) * (wlen + 3));
-		count = 0;
-		if (arr)
+		wamount = ft_count_words(s, c);
+		arr = (char**)malloc(sizeof(*arr) * (wamount + 1));
+		if (!arr)
+			return (NULL);
+		while (wamount--)
 		{
-			while (s[i])
-			{
-				if (s[i] != c)
-					count++;
-				else if (count)
-				{
-					arr[iword++] = ft_strsub(s, (i - count), count);
-					count = 0;
-				}
-				i++;
-			}
+			while (*s == c && *s != '\0')
+				s++;
+			arr[iword] = ft_strsub((const char*)s, 0, ft_count_length(s, c));
+			if (!arr[iword])
+				return (NULL);
+			s = s + ft_count_length((const char*)s, c);
+			iword++;
 		}
-		arr[iword + 1] = "\0";
+		arr[iword] = NULL;
 		return (arr);
 	}
 	return (NULL);
 }
-
-/*
-int	main()
-{
-	char *str = "*fuck";
-
-	ft_strsplit(str, '*');
-}*/

@@ -6,7 +6,7 @@
 /*   By: dcherend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 15:27:14 by dcherend          #+#    #+#             */
-/*   Updated: 2018/03/30 19:49:16 by dcherend         ###   ########.fr       */
+/*   Updated: 2018/03/31 20:22:27 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_list		*ft_lstnew(void	const *content, size_t content_size)
 	{
 		new->content = cont;
 		new->content_size = c_size;
+		new->next = NULL;
 		return (new);
 	}
 	return (NULL);
