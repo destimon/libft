@@ -75,9 +75,9 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(const char *str, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-void				ft_swap(int *a, int *b);
-void				ft_is_prime(int nb);
-void				ft_recursive_power(int nb, int power);
+int				ft_swap(int *a, int *b);
+int				ft_is_prime(int nb);
+int				ft_recursive_power(int nb, int power);
 int					ft_is_sort(int *tab, int length, int (*f)(int, int));
 int					ft_sqrt(int nb);
 typedef	struct		s_list
