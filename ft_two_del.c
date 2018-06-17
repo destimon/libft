@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_two_del.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcherend <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcherend <dcherend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/21 14:07:56 by dcherend          #+#    #+#             */
-/*   Updated: 2018/03/31 16:45:45 by dcherend         ###   ########.fr       */
+/*   Created: 2018/05/31 16:02:51 by dcherend          #+#    #+#             */
+/*   Updated: 2018/06/17 14:04:57 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c,
-		size_t n)
+void		ft_two_del(char **array)
 {
-	const char		*s;
-	char			*d;
-	size_t			i;
+	int		i;
 
 	i = 0;
-	s = (char*)src;
-	d = (char*)dst;
-	while (i < n)
+	if (array)
 	{
-		if ((unsigned char)*s == (unsigned char)c)
+		while (array[i])
 		{
-			*d++ = *s++;
-			return ((void*)d);
+			free(array[i]);
+			i++;
 		}
-		*d++ = *s++;
-		i++;
+		free(array);
 	}
-	return (NULL);
 }

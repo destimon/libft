@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dcherend <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: dcherend <dcherend@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/31 16:47:05 by dcherend          #+#    #+#              #
-#    Updated: 2018/03/31 18:36:12 by dcherend         ###   ########.fr        #
+#    Updated: 2018/05/31 16:04:14 by dcherend         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC =       ft_bzero.c ft_memcpy.c ft_memccpy.c ft_strcpy.c ft_strcat.c \
             ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_strsplit.c \
             ft_memmove.c ft_strdup.c ft_tolower.c ft_toupper.c ft_isdigit.c \
             ft_isalnum.c ft_isalpha.c ft_itoa.c ft_memset.c ft_lstnew.c \
-            ft_lstdelone.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_lstdel.c
+            ft_lstdelone.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_lstdel.c \
+            get_next_line.c ft_elems.c ft_two_del.c
 OBJ =       $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 all: $(NAME)
 $(NAME): $(OBJ)

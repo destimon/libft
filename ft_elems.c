@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_elems.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcherend <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcherend <dcherend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 19:09:17 by dcherend          #+#    #+#             */
-/*   Updated: 2018/03/28 17:08:46 by dcherend         ###   ########.fr       */
+/*   Created: 2018/05/18 17:17:58 by dcherend          #+#    #+#             */
+/*   Updated: 2018/06/17 14:05:46 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_elems(char **split)
 {
-	while (*s)
+	int		i;
+
+	i = 0;
+	if (split)
 	{
-		if ((unsigned char)*s == (unsigned char)c)
-			return ((char*)s);
-		s++;
+		i = 0;
+		while (split[i])
+			i++;
 	}
-	if (!c)
-		return ((char*)s);
-	return (NULL);
+	return (i);
 }
