@@ -6,7 +6,7 @@
 /*   By: dcherend <dcherend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 18:33:08 by dcherend          #+#    #+#             */
-/*   Updated: 2018/06/17 14:05:19 by dcherend         ###   ########.fr       */
+/*   Updated: 2018/06/19 13:54:25 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int					ft_sqrt(int nb);
 void				*ft_realloc(void *ptr, size_t size);
 int					ft_elems(char **split);
 void				ft_two_del(char **array);
+void				ft_swapch(char **a, char **b);
 
 /*
 ** LISTS.
