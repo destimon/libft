@@ -6,7 +6,7 @@
 /*   By: dcherend <dcherend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 18:33:08 by dcherend          #+#    #+#             */
-/*   Updated: 2018/06/19 13:54:25 by dcherend         ###   ########.fr       */
+/*   Updated: 2018/07/04 17:31:49 by dcherend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ void				*ft_realloc(void *ptr, size_t size);
 int					ft_elems(char **split);
 void				ft_two_del(char **array);
 void				ft_swapch(char **a, char **b);
+char				*ft_strjoin_free(char *s1, char *s2, _Bool s1b, _Bool s2b);
+int					ft_numlen(int num);
 
 /*
 ** LISTS.
