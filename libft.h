@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdarg.h>
 # define LL 922337203685477580
 
 /*
@@ -100,6 +101,7 @@ void				ft_two_del(char **array);
 void				ft_swapch(char **a, char **b);
 char				*ft_strjoin_free(char *s1, char *s2, _Bool s1b, _Bool s2b);
 int					ft_numlen(int num);
+char				*ft_strsjoin(int amount, ...);
 
 /*
 ** LISTS.
